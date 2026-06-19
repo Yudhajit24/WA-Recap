@@ -28,7 +28,7 @@ I built WA Recap after waking up to 2,500 messages during the 2026 World Cup. It
 
 ## Demo
 
-![WA Recap Demo](assets/demo.png)
+![WA Recap Demo — open a group chat, pick a time range, get a structured recap](assets/image.png)
 
 ---
 
@@ -137,7 +137,7 @@ wa-recap/
 ├── popup.js            # Popup logic, time range handling
 ├── styles.css          # Dark theme styles
 └── assets/
-    └── demo.png        # Screenshot for README
+    └── image.png       # Screenshot for README
 ```
 
 ---
