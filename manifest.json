@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "WA Recap",
+  "version": "1.0.0",
+  "description": "Summarize WhatsApp Web group chat messages into structured recaps using Groq AI.",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["https://web.whatsapp.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.whatsapp.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "WA Recap"
+  }
+}
