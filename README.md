@@ -30,6 +30,11 @@ I built WA Recap after waking up to 2,500 messages during the 2026 World Cup. It
 
 ![WA Recap Demo — open a group chat, pick a time range, get a structured recap](assets/image.png)
 
+| Topic clustering | Opinion attribution |
+|:---:|:---:|
+| ![2,500 messages clustered into 3 topics, grouped by theme not chronology](assets/1.png) | ![Who actually said what — opinions, action items, and mentions, not just a summary](assets/2.png) |
+| 2,500 messages → 3 topics, grouped by theme not time | Who said what, action items, and mentions — not just a summary |
+
 ---
 
 ## Tech stack
