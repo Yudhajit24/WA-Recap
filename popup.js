@@ -476,6 +476,7 @@ function buildPlainText() {
   return lines.join("\n").trim();
 }
 
+// copy plain text summary to clipboard
 els.copyBtn.addEventListener("click", async () => {
   const text = buildPlainText();
   if (!text) return;
