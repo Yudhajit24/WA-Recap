@@ -1,3 +1,4 @@
+// scroll-to-load: repeatedly scrolls chat container upward
 // WA Recap content script
 // Injected into WhatsApp Web. Scrapes messages from the open group chat and
 // exposes helpers on `window` for the popup to call via executeScript.
