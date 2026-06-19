@@ -37,7 +37,7 @@ I built WA Recap after waking up to 2,500 messages during the 2026 World Cup. It
 | Layer | Technology |
 |---|---|
 | Extension | Chrome Manifest V3, Vanilla JS |
-| Scraping | DOM-based, `data-id` attribute anchoring |
+| Scraping | DOM-based, anchored on `#main` + `[role="row"]` + `data-pre-plain-text` |
 | Scroll logic | Programmatic scroll-to-load for virtualised chat |
 | LLM | Groq API — `llama-3.3-70b-versatile` |
 | Storage | `chrome.storage.local` for API key |
@@ -91,8 +91,8 @@ The extension will scroll back through the chat to load messages, extract them, 
 WhatsApp Web DOM
       │
       ▼
-content.js — scrolls chat, reads data-id elements,
-             extracts sender + text + timestamp
+content.js — scrolls chat, reads [role="row"] message
+             rows, extracts sender + text + timestamp
       │
       ▼
 background.js — receives message array,
@@ -103,7 +103,7 @@ popup.js — renders topics, opinions,
            action items, mentions
 ```
 
-The scraper uses `[data-id]` attributes as the primary anchor for message detection — these are more stable than WhatsApp's hashed class names which change with updates.
+The scraper anchors on the conversation panel (`#main`), the message rows (`[role="row"]`), and each row's `data-pre-plain-text` attribute (which carries `[time, date] sender`) plus `span.selectable-text` for the body. These are far more stable than WhatsApp's hashed class names, which change with updates. Note: the older `data-id="true_…@g.us_…"` message anchor that many guides reference no longer exists on current WhatsApp Web, so WA Recap does not rely on it.
 
 ---
 
