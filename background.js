@@ -25,7 +25,7 @@ Format your response as JSON with this exact structure:
   "action_items": ["item1", "item2"],
   "mentions": ["any @mentions found in messages"]
 }
-Group related messages into topics by semantic similarity, not just chronology. A single conversation often has 3-4 parallel threads — identify them separately.`;
+Group related messages into topics by semantic similarity, not just chronology. A single conversation often has 3-4 parallel threads — identify them separately. Identify parallel threads separately.`;
 
 // Format a single message as "Sender (HH:MM): text".
 function formatMessage(m) {
