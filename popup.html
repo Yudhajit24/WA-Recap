@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WA Recap</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <span class="bolt">⚡</span>
+        <h1>WA Recap</h1>
+      </header>
+
+      <!-- Controls -->
+      <section class="controls">
+        <label class="field">
+          <span class="label-text">Time range</span>
+          <select id="rangeSelect">
+            <option value="1">Last 1 hour</option>
+            <option value="3">Last 3 hours</option>
+            <option value="6">Last 6 hours</option>
+            <option value="24">Last 24 hours</option>
+            <option value="custom">Custom</option>
+          </select>
+        </label>
+
+        <div id="customRange" class="custom-range hidden">
+          <label class="field">
+            <span class="label-text">From</span>
+            <input type="datetime-local" id="fromInput" />
+          </label>
+          <label class="field">
+            <span class="label-text">To</span>
+            <input type="datetime-local" id="toInput" />
+          </label>
+        </div>
+
+        <label class="field">
+          <span class="label-text">Groq API key</span>
+          <input
+            type="password"
+            id="apiKeyInput"
+            placeholder="gsk_..."
+            autocomplete="off"
+          />
+          <span class="hint" id="apiKeyHint"></span>
+        </label>
+
+        <button id="generateBtn" class="primary-btn">Generate Recap</button>
+      </section>
+
+      <!-- Status / loading -->
+      <section id="status" class="status hidden"></section>
+
+      <!-- Results -->
+      <section id="results" class="results hidden">
+        <div class="results-head">
+          <span id="chatNameLabel" class="chat-name"></span>
+          <button id="copyBtn" class="copy-btn">Copy summary</button>
+        </div>
+
+        <div id="topicsBlock" class="block">
+          <h2 class="block-title">Topics</h2>
+          <div id="topicsList"></div>
+        </div>
+
+        <div id="opinionsBlock" class="block">
+          <h2 class="block-title">Who said what</h2>
+          <div id="opinionsList"></div>
+        </div>
+
+        <div id="actionsBlock" class="block">
+          <h2 class="block-title">Action items</h2>
+          <ul id="actionsList"></ul>
+        </div>
+
+        <div id="mentionsBlock" class="block">
+          <h2 class="block-title">Mentions</h2>
+          <div id="mentionsList" class="mentions"></div>
+        </div>
+
+        <div id="rawBlock" class="block hidden">
+          <h2 class="block-title">Raw output</h2>
+          <pre id="rawOutput"></pre>
+        </div>
+      </section>
+    </div>
+
+    <script src="popup.js"></script>
+  </body>
+</html>
